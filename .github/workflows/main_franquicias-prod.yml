@@ -62,5 +62,5 @@ jobs:
         with:
           app-name: 'franquicias-prod'
           slot-name: 'Production'
-          package: .
+          package: dist/franquicias-front/browser
           
