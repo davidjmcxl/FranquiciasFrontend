@@ -1,0 +1,57 @@
+<mat-card class="container">
+  <h2>Franquicias</h2>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Nombre nueva franquicia</mat-label>
+    <input matInput [(ngModel)]="nuevaFranquicia" />
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="agregarFranquicia()">Agregar</button>
+
+  <mat-list>
+    <mat-list-item *ngFor="let franq of franquicias()">
+      <button mat-button (click)="seleccionarFranquicia(franq)">
+        {{ franq.nombre }}
+      </button>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
+
+<mat-card class="container" *ngIf="selectedFranquicia">
+  <h3>Sucursales de {{ selectedFranquicia.nombre }}</h3>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Nueva sucursal</mat-label>
+    <input matInput [(ngModel)]="nuevaSucursal" />
+  </mat-form-field>
+  <button mat-raised-button color="accent" (click)="agregarSucursal()">Agregar Sucursal</button>
+
+  <mat-list>
+    <mat-list-item *ngFor="let suc of selectedFranquicia.sucursales">
+      <button mat-button (click)="seleccionarSucursal(suc)">
+        {{ suc.nombre }}
+      </button>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
+
+<mat-card class="container" *ngIf="selectedSucursal">
+  <h4>Productos en {{ selectedSucursal.nombre }}</h4>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Nombre producto</mat-label>
+    <input matInput [(ngModel)]="nuevoProductoNombre" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Precio</mat-label>
+    <input matInput type="number" [(ngModel)]="nuevoProductoPrecio" />
+  </mat-form-field>
+
+  <button mat-raised-button color="warn" (click)="agregarProducto()">Agregar Producto</button>
+
+  <mat-list>
+    <mat-list-item *ngFor="let p of selectedSucursal.productos">
+      {{ p.nombre }} - ${{ p.precio }}
+    </mat-list-item>
+  </mat-list>
+</mat-card>

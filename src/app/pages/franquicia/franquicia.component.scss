@@ -1,0 +1,23 @@
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.sub-panel {
+  margin-left: 20px;
+  padding: 10px 0;
+  border-left: 2px solid #ccc;
+}
+
+.franq-item, .suc-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
