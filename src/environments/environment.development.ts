@@ -1,5 +1,5 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:5000/api/franquicias'
+   apiUrl: 'http://franquicias-prod.eba-ziwamniw.us-east-1.elasticbeanstalk.com/api/franquicias'
 };
